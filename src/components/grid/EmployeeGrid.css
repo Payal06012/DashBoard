@@ -1,0 +1,69 @@
+.ag-grid-container {
+  width: 100%;
+  height: 520px;
+}
+
+/* Employee Cell */
+.employee-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.employee-email {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* Progress Bar */
+.performance-bar-container {
+  width: 100%;
+  background: #e5e7eb;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.performance-bar {
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.action-edit {
+  padding: 3px 8px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.action-edit:hover {
+  background: #1e40af;
+}
+
+.action-delete {
+  padding: 3px 8px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.action-delete:hover {
+  background: #b91c1c;
+}
