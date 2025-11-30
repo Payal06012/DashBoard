@@ -5,12 +5,12 @@ export default function Header() {
   return (
     <header className="app-header">
       <div>
-        <h1 className="app-title">FactWise Employee Analytics</h1>
+        <h1 className="app-title">Employee Insights & Management Dashboard</h1>
         <p className="app-subtitle">
-          AG Grid scalable dashboard — optimized for enterprise datasets.
+          A centralized platform to view, analyze, and manage workforce data across departments.
         </p>
       </div>
-      <div className="app-badge">AG Grid · React</div>
+      <div className="app-badge">FactWise</div>
     </header>
   );
 }

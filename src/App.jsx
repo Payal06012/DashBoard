@@ -1,5 +1,7 @@
 import React, { useState, useMemo, useCallback } from "react";
 import { ModuleRegistry, AllCommunityModule } from "ag-grid-community";
+import EditEmployeeModal from "./components/models/EditEmployeeModel";
+import AddEmployeeModal from "./components/models/AddEmployeeModel";
 
 import Header from "./components/header/Header";
 import SummaryCard from "./components/summary/SummaryCard";
@@ -19,6 +21,12 @@ export default function App() {
   const [quickFilter, setQuickFilter] = useState("");
   const [noResults, setNoResults] = useState(false);
 
+  const [editingEmployee, setEditingEmployee] = useState(null);
+const [isEditOpen, setIsEditOpen] = useState(false);
+
+//add employee
+const [isAddOpen, setIsAddOpen] = useState(false);
+
 
   // ---------- CRUD ----------
   // const deleteEmployee = (id) => {
@@ -35,16 +43,31 @@ export default function App() {
 };
 
 
-  const editEmployee = (employee) => {
-    const newName = prompt("Enter new name", employee.firstName);
-    if (!newName) return;
+  // const editEmployee = (employee) => {
+  //   const newName = prompt("Enter new name", employee.firstName);
+  //   if (!newName) return;
 
-    setRowData((prev) =>
-      prev.map((emp) =>
-        emp.id === employee.id ? { ...emp, firstName: newName } : emp
-      )
-    );
-  };
+  //   setRowData((prev) =>
+  //     prev.map((emp) =>
+  //       emp.id === employee.id ? { ...emp, firstName: newName } : emp
+  //     )
+  //   );
+  // };
+
+
+  const editEmployee = (employee) => {
+  setEditingEmployee(employee);
+  setIsEditOpen(true);
+};
+
+const saveEditedEmployee = (updated) => {
+  setRowData(prev =>
+    prev.map(emp => emp.id === updated.id ? updated : emp)
+  );
+  setIsEditOpen(false);
+};
+
+
 
   const addEmployee = () => {
     const firstName = prompt("First Name");
@@ -71,6 +94,12 @@ export default function App() {
 
     setRowData((prev) => [...prev, newEmployee]);
   };
+
+      //add eMPLOYEE
+    const saveNewEmployee = (newEmp) => {
+  setRowData(prev => [...prev, newEmp]);
+  setIsAddOpen(false);
+};
 
   // ---------- GRID ----------
   const onGridReady = useCallback((params) => {
@@ -142,15 +171,37 @@ export default function App() {
           clearSearch={clearSearch}
         />
 
-        <button className="add-btn" onClick={addEmployee}>
+        {/* <button className="add-btn" onClick={addEmployee}>
           ➕ Add Employee
-        </button>
+        </button> */}
+        <button className="add-btn" onClick={() => setIsAddOpen(true)}>
+  ➕ Add Employee
+</button>
+
       </section>
+
+
 
       {noResults && (
         <div className="no-results">❌ No matching records found.</div>
       )}
 
+
+   {isEditOpen && (
+  <EditEmployeeModal
+    employee={editingEmployee}
+    onClose={() => setIsEditOpen(false)}
+    onSave={saveEditedEmployee}
+  />
+)}
+
+      {isAddOpen && (
+       
+  <AddEmployeeModal
+    onClose={() => setIsAddOpen(false)}
+    onSave={saveNewEmployee}
+  />
+)}
       
 
       {/* Employee Grid */}
@@ -162,7 +213,7 @@ export default function App() {
       />
 
       <footer className="footer">
-        Built for FactWise assignment · AG Grid · React
+        FactWise Analytics 
       </footer>
     </div>
   );
