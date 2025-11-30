@@ -383,5 +383,12 @@ body {
   background: #1e40af;
 }
 
+.plus-white {
+  color: rgb(235, 235, 235) !important;
+  font-size: 11px;
+  font-weight: 400;
+  margin-right: 6px;
+}
+
 
 

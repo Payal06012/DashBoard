@@ -174,8 +174,12 @@ const saveEditedEmployee = (updated) => {
         {/* <button className="add-btn" onClick={addEmployee}>
           ➕ Add Employee
         </button> */}
-        <button className="add-btn" onClick={() => setIsAddOpen(true)}>
+        {/* <button className="add-btn" onClick={() => setIsAddOpen(true)}>
   ➕ Add Employee
+</button> */}
+
+<button className="add-btn" onClick={() => setIsAddOpen(true)}>
+  <span className="plus-white">✚</span> Add Employee
 </button>
 
       </section>
