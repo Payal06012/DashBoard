@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./App.jsx";
-// import "./App.css";
+import App from "./App.jsx";
+import "./App.css";
 
-// // AG Grid CSS
-// import "ag-grid-community/styles/ag-grid.css";
-// import "ag-grid-community/styles/ag-theme-quartz.css";
+// AG Grid CSS
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-quartz.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
   
-    {/* <App /> */}
-    <h1>DashBoard</h1>
+    <App />
+   
 
   </React.StrictMode>
 );

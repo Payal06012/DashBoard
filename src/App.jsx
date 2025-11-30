@@ -19,10 +19,21 @@ export default function App() {
   const [quickFilter, setQuickFilter] = useState("");
   const [noResults, setNoResults] = useState(false);
 
+
   // ---------- CRUD ----------
+  // const deleteEmployee = (id) => {
+  //   setRowData((prev) => prev.filter((emp) => emp.id !== id));
+  // };
+
   const deleteEmployee = (id) => {
-    setRowData((prev) => prev.filter((emp) => emp.id !== id));
-  };
+  const confirmDelete = window.confirm(
+    "⚠️ Are you sure you want to delete this employee?"
+  );
+  if (!confirmDelete) return;
+
+  setRowData((prev) => prev.filter((emp) => emp.id !== id));
+};
+
 
   const editEmployee = (employee) => {
     const newName = prompt("Enter new name", employee.firstName);
@@ -106,6 +117,7 @@ export default function App() {
 
   return (
     <div className="app-container">
+
       <Header />
 
       {/* Summary Cards */}
@@ -138,6 +150,8 @@ export default function App() {
       {noResults && (
         <div className="no-results">❌ No matching records found.</div>
       )}
+
+      
 
       {/* Employee Grid */}
       <EmployeeGrid
