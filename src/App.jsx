@@ -160,7 +160,7 @@ const saveEditedEmployee = (updated) => {
       {/* Toolbar */}
       <section className="toolbar">
         <div>
-          <h2 className="section-title">Employee Table</h2>
+          <h2 className="section-title">Employee Details</h2>
           <p className="section-subtitle">Search, filter & explore employees</p>
         </div>
 
