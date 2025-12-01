@@ -9,15 +9,17 @@
   justify-content: center;
   align-items: center;
   z-index: 5000;
+ 
 }
 
 .modal {
   width: 620px;
   background: #fff;
-  padding: 24px;
-  border-radius: 12px;
+  padding: 5px 24px 10px;
+  border-radius: 50px ;
   box-shadow: 0 15px 35px rgba(0,0,0,0.25);
   animation: pop 0.25s ease;
+   border : 5px solid rgb(133, 129, 236);
 }
 
 @keyframes pop {
@@ -27,10 +29,13 @@
 
 
 .modal h2 {
-  padding: 3px;
-  margin: 0 0 18px;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  margin-bottom :30px;
   text-align: center;
-  color: blue;
+  color: rgb(65, 65, 230);
+  
+
 }
 
 .form-grid {
@@ -40,15 +45,15 @@
 }
 
 .form-grid label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #374151;
+  font-size: 12px;
+  font-weight: 540;
+  color: #5d5e61;
 }
 
 .form-grid input {
   width: 100%;
   margin-top: 2px;
-  padding: 8px;
+  padding: 5px;
   border-radius: 8px;
   border: 1px solid #d1d5db;
 }
@@ -59,7 +64,7 @@
 }
 
 .modal-buttons {
-  margin-top: 20px;
+  margin: 10px ;
   display: flex;
   justify-content: space-between;
 }
@@ -87,4 +92,4 @@
 
 .cancel-btn:hover {
   background: #d1d5db;
-} */
+} 
